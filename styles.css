@@ -30,7 +30,7 @@
 
 html{
   box-sizing: border-box;
-  font-size: 62.5%;
+  font-size: 62.5%; /* 10px */
   scroll-behavior: smooth;
 }
 
@@ -40,19 +40,19 @@ html{
 /* 1200px / 16px = 75em tablet landscape to laptop */
 @media (max-width: 75em){
   html{
-    font-size: 60%;
+    font-size: 60%; /* (16 * 60% = 9.6px) */
   }
 }
 /* 980px / 16px = 61.25em tablet portrait to landscape */
 @media (max-width: 61.25em){
   html{
-    font-size: 58%;
+    font-size: 58%; /* 9.28px */
   }
 }
 /* 460px / 16px = 28.75em mobile portrait to landscape */
 @media (max-width: 28.75em){
   html{
-    font-size: 55%;
+    font-size: 55%; /* 8.8px */
   }
 }
 
@@ -102,7 +102,11 @@ a{
   display: flex;
   margin-right: 3rem; /* 30px */
 }
-
+@media (max-width: 28.75em) {
+  .navigation{
+    margin: 0 1rem;
+  }
+}
 .nav-list a{
   display: block;
   font-size: 2.2rem;
@@ -156,6 +160,11 @@ a{
   padding-bottom: 1rem;
   border-bottom: 2px solid var(--color-ltBlue);
 }
+@media (max-width: 28.75em){
+  .project-area-title{
+    font-size: 4rem;
+  }
+}
 
 /* project grid */
 
@@ -168,6 +177,14 @@ a{
   margin: 0 auto;
   margin-bottom: 6rem;
 }
+@media (max-width: 30.625em){
+  .project-sect{
+    padding: 6rem 1rem;
+  }
+  .project-area{
+    grid-template-columns: 1fr;
+    }
+  }
 .project-img{
   height: calc(100% - 6.8rem);
   width: 90%;
@@ -236,12 +253,18 @@ a{
 .contact-sect-header > h2{
   font-size: 5rem;
 }
+@media (max-width: 28.75em){
+  .contact-sect-header{
+    font-size: 4rem;
+  }
+}
 .contact-sect-header > blockquote > p{
   font-style: italic;
   font-size: 3rem;
   font-weight: 300;
   padding-top: 2rem;
 }
+
 .contact-sect-header > cite{
   font-style: italic;
   font-size: 2.5rem;
@@ -282,4 +305,10 @@ footer{
   justify-content: space-evenly;
   padding: 2rem;
   border-top: 5px solid var(--color-dkBlue);
+}
+@media (max-width: 28.75em){
+  footer{
+    flex-direction: column;
+    text-align: center;
+  }
 }
